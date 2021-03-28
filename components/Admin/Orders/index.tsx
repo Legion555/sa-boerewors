@@ -15,9 +15,9 @@ export default function Index() {
 
     return(
         <div className="w-full p-4 flex flex-col gap-8">
-            <PendingOrders setCompletedOrders={setCompletedOrders} />
+            <PendingOrders />
 
-            <CompletedOrders completedOrders={completedOrders} />
+            <CompletedOrders />
         </div>
     )
 }
