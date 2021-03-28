@@ -32,7 +32,7 @@ export default function ProductList() {
                 <div className="w-full h-1 bg-gray-400" />
             </div>
             <div className="flex flex-wrap justify-evenly gap-4">
-                {productList.map(product =>
+                {productList && productList.map(product =>
                     <ProductCard key={product._id} productData={product} />
                 )}
             </div>

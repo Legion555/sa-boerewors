@@ -8,7 +8,7 @@ interface ProductListState {
 
 // Define the initial state using that type
 const initialState = {
-    value: null
+    value: []
 } as ProductListState
 
 export const productListSlice = createSlice({
