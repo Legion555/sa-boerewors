@@ -13,7 +13,7 @@ import {RiShutDownLine} from 'react-icons/ri'
 
 export default function Nav() {
     const dispatch = useAppDispatch()
-    const userData = useAppSelector(state => state.userData.value)
+    const userData = useAppSelector<any>(state => state.userData.value)
     const cart = useAppSelector(state => state.cart.value)
     const darkMode = useAppSelector(state => state.darkMode.value)
 

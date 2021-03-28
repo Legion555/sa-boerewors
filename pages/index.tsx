@@ -15,7 +15,7 @@ import AuthModal from '../components/Authentication';
 
 export default function Home() {
   const dispatch = useAppDispatch();
-  const userData = useAppSelector(state => state.userData.value);
+  const userData = useAppSelector<any>(state => state.userData.value);
   const modal = useAppSelector(state => state.modal.value);
   const darkMode = useAppSelector(state => state.darkMode.value)
 

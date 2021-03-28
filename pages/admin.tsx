@@ -8,12 +8,14 @@ import {resetUserData} from '../slices/userDataSlice'
 
 export default function Admin() {
     const dispatch = useAppDispatch()
-    const userData = useAppSelector(state => state.userData.value)
+    const userData = useAppSelector<any>(state => state.userData.value)
     
     useEffect(() => {
-        if (userData && userData.role == 'customer') {
+        // if (userData.role && userData.role == 'admin') {
+        //     null
+        // } else {
             dispatch(resetUserData())
-        }
+        // }
     }, [])
 
     return (

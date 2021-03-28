@@ -17,7 +17,7 @@ import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 
 export default function Payment({setPhase}) {
     const dispatch = useAppDispatch()
-    const userData = useAppSelector(state => state.userData.value)
+    const userData = useAppSelector<any>(state => state.userData.value)
     const cart = useAppSelector(state => state.cart.value)
     const shipping = useAppSelector(state => state.shipping.value)
 

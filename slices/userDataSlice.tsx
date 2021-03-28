@@ -7,9 +7,9 @@ interface UserDataState {
 }
 
 // Define the initial state using that type
-const initialState: UserDataState = {
+const initialState = {
     value: null
-}
+} as UserDataState
 
 export const userDataSlice = createSlice({
     name: 'userData',

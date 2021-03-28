@@ -13,7 +13,7 @@ import Authentication from '../../../components/Authentication'
 export default function album() {
     const router = useRouter();
 
-    const userData = useAppSelector(state => state.userData.value)
+    const userData = useAppSelector<any>(state => state.userData.value)
 
     useEffect(() => {
         if (userData) {
