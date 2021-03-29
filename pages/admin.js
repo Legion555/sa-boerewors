@@ -11,11 +11,10 @@ export default function Admin() {
     const userData = useSelector(state => state.userData.value)
     
     useEffect(() => {
-        if (userData.role && userData.role == 'admin') {
-            null
-        } else {
-            dispatch(resetUserData())
+        if (userData && userData.role == 'admin') {
+            return null
         }
+        return dispatch(resetUserData())
     }, [])
 
     return (
