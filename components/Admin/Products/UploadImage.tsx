@@ -109,7 +109,7 @@ export default function UploadImage({imgUrl, setImgUrl, phase}) {
     <div className="mb-4 flex justify-center">
       {view === 'upload' &&
       <div className="w-80 p-4 rounded shadow">
-        <h1 className="mb-2 text-center text-3xl">Upload image</h1>
+        <h1 className="mb-2 text-center text-2xl">Upload image</h1>
         <div className="h-48 p-4 border-2 border-dashed rounded bg-gray-50 mb-2" style={dropStyle}
           onDragOver={dragOver}
           onDragEnter={dragEnter}
@@ -135,8 +135,8 @@ export default function UploadImage({imgUrl, setImgUrl, phase}) {
       }
       {view === 'uploaded' &&
       <div className="w-full p-4 rounded shadow">
-        <h1 className="mb-4 text-2xl"><AiOutlineCheckCircle className="inline text-green-600" /> Uploaded successfully</h1>
-        <div className="w-full h-64 mb-4 relative">
+        <h1 className="mb-4 text-xl md:text-2xl"><AiOutlineCheckCircle className="inline text-green-600" /> Uploaded successfully</h1>
+        <div className="w-full h-48 md:h-64 mb-4 relative">
             <Image className="object-contain" src={imgUrl ? imgUrl : 'https://via.placeholder.com/250'} layout='fill' />
         </div>
         <p className="w-max mx-auto p-4 rounded-xl text-gray-200 bg-green-800 cursor-pointer"

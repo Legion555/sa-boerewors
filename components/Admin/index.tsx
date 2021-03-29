@@ -9,26 +9,27 @@ import Nav from './Nav'
 import Products from './Products/index'
 import Orders from './Orders/index'
 //icons
+import {FaArrowRight} from 'react-icons/fa'
 import {RiShutDownLine} from 'react-icons/ri'
 
 
 
 export default function Index() {
     const dispatch = useAppDispatch();
-    const [view, setView] = useState('products')
+    const [view, setView] = useState('products');
 
     return (
-        <div className="w-full h-screen bg-gray-100">
+        <div className="w-full min-h-screen bg-gray-100">
             <Nav view={view} setView={setView} />
 
-            <div className="pl-64">
+            <div className="pt-24 lg:pt-0 lg:pl-64">
                 {view === 'dashboard' && <Products />}
                 {view === 'products' && <Products />}
                 {view === 'orders' && <Orders />}
                 {view === 'customers' && <Products />}
             </div>
 
-            <RiShutDownLine className="absolute top-2 right-2 text-3xl text-red-600 cursor-pointer" onClick={() => dispatch(resetUserData())} />
+            <RiShutDownLine className="absolute z-40 top-2 right-2 text-3xl text-red-600 cursor-pointer" onClick={() => dispatch(resetUserData())} />
         </div>
     )
 }

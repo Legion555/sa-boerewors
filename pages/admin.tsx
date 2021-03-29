@@ -19,7 +19,7 @@ export default function Admin() {
     }, [])
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-full min-h-screen">
 
             {userData ?
                 <Index />

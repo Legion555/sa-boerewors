@@ -19,12 +19,11 @@ export default function PendingOrders() {
     return (
         <div className="w-full p-4 rounded bg-white">
             <h1 className="py-2 text-2xl text-gray-600">Pending Orders</h1>
-            <div className="mb-2 p-2 py-3 flex justify-between rounded text-gray-200 bg-blue-600">
-                <h1 className="w-2/12">Delivery Details</h1>
-                <h1 className="w-2/12">Contact Details</h1>
-                <h1 className="w-2/12">Price</h1>
-                <h1 className="w-2/12">Products</h1>
-                <h1 className="w-1/12">Actions</h1>
+            <div className="mb-2 p-2 py-3 hidden md:flex justify-between rounded text-gray-200 bg-blue-600">
+                <h1 className="w-3/12">Delivery Details</h1>
+                <h1 className="w-3/12">Contact Details</h1>
+                <h1 className="w-4/12">Order Details</h1>
+                <h1 className="w-2/12">Actions</h1>
             </div>
             <div>
             {pendingOrders.map(order => 
@@ -88,29 +87,30 @@ const Order = ({order, pendingOrders, setPendingOrders}) => {
     }
 
     return (
-        <div className="mb-2 p-2 flex justify-between items-start bg-gray-200">
-            <div className="w-2/12">
-                <p>{order.shipping.availableDate}</p>
-                <p>{order.shipping.preferredTime}</p>
-                <p>{order.shipping.shippingMethod === 'pick_up' && 'Pick up'}</p>
-                <p>{order.shipping.shippingMethod === 'ship' && 'Ship to address'}</p>
-                <p>{order.shipping.shippingAddress}</p>
+        <div className="mb-2 p-2 flex flex-col md:flex-row gap-4 md:gap-1 justify-between items-start bg-gray-200">
+            <div className="md:w-3/12">
+                <p><span className="md:hidden">Preferred date: </span>{order.shipping.availableDate}</p>
+                <p><span className="md:hidden">Time: </span>{order.shipping.preferredTime}</p>
+                <p><span className="md:hidden">Shipping method: </span>
+                    {order.shipping.shippingMethod === 'pick_up' && 'Pick Up'}
+                    {order.shipping.shippingMethod === 'ship' && 'Ship to address'}</p>
+                <p><span className="md:hidden">Shipping address: </span>{order.shipping.shippingAddress}</p>
             </div>
-            <div className="w-2/12">
+            <div className="md:w-3/12">
                 <p className="w-1/12">{order.shipping.contactName}</p>
                 <p className="w-2/12">{order.shipping.contactNumber}</p>
                 <p className="w-2/12">{order.buyerEmail}</p>
             </div>
-            <p className="w-2/12">{numberWithCommas(order.totalCost)} VND</p>
-            <div className="w-2/12">
+            <div className="md:w-4/12">
                 {order.products.map(product => 
                     <div key={product._id} className="flex gap-2">
                         <p>{product.name}</p>
                         <p>{product.quantity} {product.measurement}</p>
                     </div>
                 )}
+                <p className="w-max p-1 bg-blue-200"><span className="md:hidden">Amount: </span>{numberWithCommas(order.totalCost)} VND</p>
             </div>
-            <div className="w-1/12">
+            <div className="md:w-2/12">
                 <button className="mb-2 p-1 rounded text-gray-200 bg-green-600"
                     onClick={completeOrder} >Complete</button>
                 <button className="p-1 rounded text-gray-200 bg-red-600"

@@ -51,7 +51,7 @@ export default function EditProduct({product}) {
     }
 
     return (
-        <animated.div style={extend} className="w-full md:w-4/12 min-h-screen fixed z-40 top-0 right-0 pt-16 px-4 text-gray-800 bg-white">
+        <animated.div style={extend} className="w-full md:w-4/12 min-h-screen fixed z-50 top-0 right-0 pt-4 md:pt-12 px-4 text-gray-800 bg-white">
             <h1 className="mb-4 text-2xl text-center">Edit Product</h1>
             <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
             <div className="flex gap-4">

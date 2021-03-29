@@ -41,16 +41,15 @@ export default function ProductList() {
     }, [])
 
     return (
-        <div className="w-full p-4">            
+        <div className="w-full p-4">
             <button className="mb-4 p-2 rounded text-xl text-gray-200 bg-blue-800 focus:outline-none" onClick={() => dispatch(updateModal('addProduct'))}>Add Product</button>
 
             <div className="w-full p-4 rounded bg-white">
                 <h1 className="py-2 text-2xl text-gray-600">Products</h1>
                 <div className="flex justify-between p-2 py-3 rounded text-gray-200 bg-blue-600">
-                    <h1 className="w-3/12">Product Name</h1>
-                    <h1 className="w-2/12">Category</h1>
-                    <h1 className="w-2/12">Price</h1>
-                    <h1 className="w-1/12">Actions</h1>
+                    <h1 className="w-6/12">Product Details</h1>
+                    <h1 className="w-3/12">Price</h1>
+                    <h1 className="w-3/12 text-right">Actions</h1>
                 </div>
                 <div>
                 {productList.map(product => 
@@ -85,23 +84,25 @@ const Product = ({product, setProductData}) => {
 
     return (
         <div className="flex justify-between items-center">
-            <div className="w-3/12 flex items-center gap-2">
-                <div className="w-16 h-16 relative">
-                    <Image className="object-contain" src={product.imgUrl ? product.imgUrl : 'https://via.placeholder.com/50'} layout="fill" />
+            <div className="w-6/12 flex flex-col">
+                <div className="flex items-center gap-2">
+                    <div className="w-16 h-16 relative">
+                        <Image className="object-contain" src={product.imgUrl ? product.imgUrl : 'https://via.placeholder.com/50'} layout="fill" />
+                    </div>
+                    <h1>{product.name}</h1>
                 </div>
-                <h1>{product.name}</h1>
+                <p className="w-max p-1 rounded-xl bg-gray-200">{product.category}</p>
             </div>
-            <h1 className="w-2/12">{product.category}</h1>
-            <h1 className="w-2/12">{numberWithCommas(parseInt(product.price, 10))} VND per {product.measurement}</h1>
-            <div className="w-1/12">
-                <div className="relative">
+            <h1 className="w-3/12">{numberWithCommas(parseInt(product.price, 10))} VND per {product.measurement}</h1>
+            <div className="w-3/12">
+                <div className="relative float-right">
                     <BsThreeDotsVertical className="p-2 text-4xl cursor-pointer" onClick={actionView ? () => setActionView(false) : () => setActionView(true)} />
                     {actionView &&
-                        <Icon color={'red-600'} iconName={BsFillTrashFill} position={'-translate-x-full'}
+                        <Icon color={'red-600'} iconName={BsFillTrashFill} position={'-translate-x-full -translate-y-2/3'}
                         cta={() => removeProduct(product)} />
                     }
                     {actionView &&
-                        <Icon color={'green-600'} iconName={BsPencil} position={'translate-x-full'}
+                        <Icon color={'green-600'} iconName={BsPencil} position={'-translate-x-full translate-y-2/3'}
                         cta={() => {
                             dispatch(updateModal('editProduct'));
                             setProductData(product);
