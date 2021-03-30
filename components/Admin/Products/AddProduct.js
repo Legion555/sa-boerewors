@@ -20,7 +20,7 @@ export default function AddProduct() {
 
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
-    const [measurement, setMeasurement] = useState('');
+    const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [imgUrl, setImgUrl] = useState();
 
@@ -34,7 +34,7 @@ export default function AddProduct() {
         const payload = {
             name: name,
             price: parseInt(price, 10),
-            measurement: measurement,
+            description: description,
             category: category,
             imgUrl: imgUrl
         }
@@ -49,10 +49,8 @@ export default function AddProduct() {
         <animated.div style={extend} className="w-full md:w-6/12 lg:w-4/12 h-screen fixed z-50 top-0 left-0 pt-4 md:pt-12 px-4 text-gray-800 bg-white">
             <h1 className="mb-4 text-2xl text-center">Add Product</h1>
             <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
-            <div className="flex gap-4">
-                <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
-                <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="per / (kg, piece, bag, ...)" value={measurement} onChange={(e) => setMeasurement(e.target.value)} />
-            </div>
+            <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <textarea className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="description" value={description} onChange={(e) => setDescription(e.target.value)} />
 
             <div className="mb-4 flex justify-between">
                 <select name="category" value={category} onChange={(e) => setCategory(e.target.value)}>

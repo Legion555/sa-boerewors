@@ -9,7 +9,7 @@ export default async function handler(req, res) {
             { $set: {
                 name: req.body.name,
                 price: req.body.price,
-                measurement: req.body.measurement,
+                description: req.body.description,
                 category: req.body.category,
                 imgUrl: req.body.imgUrl
                 }

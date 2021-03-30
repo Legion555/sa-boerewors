@@ -68,8 +68,8 @@ const ProductCard = ({productData}) => {
     return (
         <div key={productData._id} className="w-full md:w-5/12 xl:w-3/12 relative p-4 rounded-2xl shadow-lg bg-gray-100 overflow-hidden"
             onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
-            <h1 className="text-2xl text-center text-gray-900 font-bold">{productData.name}</h1>
-            <p className="mb-4 text-center text-gray-700 font-bold">{parseInt(productData.price, 10)} Dong per {productData.measurement}</p>
+            <h1 className="text-xl text-center text-gray-900 font-bold">{productData.name}</h1>
+            <p className="mb-4 text-center text-gray-700 font-bold">${numberWithCommas(parseInt(productData.price, 10))}</p>
             <div className="w-full h-32 md:h-40 relative">
                 <Image className="object-contain" src={productData.imgUrl ? productData.imgUrl : 'https://via.placeholder.com/250'} layout="fill" />
             </div>

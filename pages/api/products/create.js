@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         const newProduct = new Product({
             name: req.body.name,
             price: req.body.price,
-            measurement: req.body.measurement,
+            description: req.body.description,
             category: req.body.category,
             imgUrl: req.body.imgUrl
         });

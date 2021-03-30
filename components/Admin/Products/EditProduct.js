@@ -23,7 +23,7 @@ export default function EditProduct({product}) {
 
     const [name, setName] = useState(product ? product.name : null);
     const [price, setPrice] = useState(product ? product.price : null);
-    const [measurement, setMeasurement] = useState(product ? product.measurement : null);
+    const [description, setDescription] = useState(product ? product.description : null);
     const [category, setCategory] = useState(product ? product.category : null);
     const [imgUrl, setImgUrl] = useState(product ? product.imgUrl : null);
 
@@ -54,10 +54,9 @@ export default function EditProduct({product}) {
         <animated.div style={extend} className="w-full md:w-4/12 min-h-screen fixed z-50 top-0 right-0 pt-4 md:pt-12 px-4 text-gray-800 bg-white">
             <h1 className="mb-4 text-2xl text-center">Edit Product</h1>
             <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
-            <div className="flex gap-4">
-                <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
-                <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="per / (kg, piece, bag, ...)" value={measurement} onChange={(e) => setMeasurement(e.target.value)} />
-            </div>
+            <input className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <textarea className="w-full mb-4 p-2 text-xl bg-gray-100" type="text" placeholder="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+
             <div className="mb-4 flex justify-between">
                 <select name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
                     <option  value ="" disabled>Choose a category:</option>

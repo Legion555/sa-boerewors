@@ -89,7 +89,7 @@ export default function Payment({setPhase}) {
                             <p className="text-gray-600">{item.quantity}</p>
                             <AiOutlineMinus className="text-red-600 hover:text-red-800 cursor-pointer" onClick={() => remove(item)} />
                         </div>
-                        <h1 className="w-full text-right text-xl">{numberWithCommas(item.quantity * item.price)} VND</h1>
+                        <h1 className="w-full text-right text-xl">${numberWithCommas(item.quantity * item.price)}</h1>
                     </div>
                 </div>
             )}
@@ -100,15 +100,15 @@ export default function Payment({setPhase}) {
             <div className="mb-4">
                 <div className="flex justify-between">
                     <p>Subtotal: </p>
-                    <p>{numberWithCommas(calcTotalCost())} VND</p>
+                    <p>${numberWithCommas(calcTotalCost())}</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Shipping Cost: </p>
-                    <p>{numberWithCommas(shipping.shippingCost)} VND</p>
+                    <p>${numberWithCommas(shipping.shippingCost)}</p>
                 </div>
                 <div className="flex justify-between pt-2 border-t-2 border-gray-600 font-bold">
                     <p>Total Cost: </p>
-                    <p>{numberWithCommas(calcTotalCostWithShipping())} VND</p>
+                    <p>${numberWithCommas(calcTotalCostWithShipping())}</p>
                 </div>
             </div>            
 

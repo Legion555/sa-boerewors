@@ -93,7 +93,7 @@ const Product = ({product, setProductData}) => {
                 </div>
                 <p className="w-max p-1 rounded-xl bg-blue-200">{product.category}</p>
             </div>
-            <h1 className="w-3/12">{numberWithCommas(parseInt(product.price, 10))} VND per {product.measurement}</h1>
+            <h1 className="w-3/12">${numberWithCommas(parseInt(product.price, 10))}</h1>
             <div className="w-3/12">
                 <div className="relative float-right">
                     <BsThreeDotsVertical className="p-2 text-4xl cursor-pointer" onClick={actionView ? () => setActionView(false) : () => setActionView(true)} />

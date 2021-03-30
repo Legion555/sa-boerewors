@@ -32,7 +32,7 @@ export default function Shipping({setPhase}) {
             shippingAddress: shippingAddress,
             preferredTime: preferredTime,
             availableDate: availableDate,
-            shippingCost: 50000
+            shippingCost: 50
         }
         dispatch(updateShipping(payload));
         setPhase('payment')

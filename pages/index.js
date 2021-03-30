@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div className={`w-full min-h-screen ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
         <Head>
-            <title>SA Boerewors</title>
+            <title>Tempus</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
 

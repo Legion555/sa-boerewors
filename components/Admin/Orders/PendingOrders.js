@@ -104,10 +104,10 @@ const Order = ({order, pendingOrders, setPendingOrders}) => {
                 {order.products.map(product => 
                     <div key={product._id} className="flex gap-2">
                         <p>{product.name}</p>
-                        <p>{product.quantity} {product.measurement}</p>
+                        <p>{product.quantity}x</p>
                     </div>
                 )}
-                <p className="w-max p-1 bg-green-200"><span className="md:hidden">Amount: </span>{numberWithCommas(order.totalCost)} VND</p>
+                <p className="w-max p-1 bg-green-200"><span className="md:hidden">Amount: </span>${numberWithCommas(order.totalCost)}</p>
             </div>
             <div className="md:w-2/12">
                 <button className="mb-2 p-1 rounded text-gray-200 bg-green-600"

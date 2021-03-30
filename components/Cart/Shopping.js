@@ -59,13 +59,13 @@ export default function Shopping({setPhase}) {
                                 <p className="text-gray-600">{item.quantity}</p>
                                 <AiOutlineMinus className="text-red-600 hover:text-red-800 cursor-pointer" onClick={() => remove(item)} />
                             </div>
-                            <h1 className="w-full text-right text-xl">{numberWithCommas(item.quantity * item.price)} VND</h1>
+                            <h1 className="w-full text-right text-xl">${numberWithCommas(item.quantity * item.price)}</h1>
                         </div>
                     </div>
                 )}
             </div>
             {userData && 
-                <h1 className="font-bold">Subtotal: {numberWithCommas(calcTotalCost())} VND</h1>
+                <h1 className="font-bold">Subtotal: ${numberWithCommas(calcTotalCost())}</h1>
             }
             {cart.length > 0 &&
                 <button className="p-2 text-xl rounded text-gray-200 bg-blue-600" onClick={() => setPhase('shipping')}>

@@ -42,10 +42,10 @@ const Order = ({order}) => {
                 {order.products.map(product => 
                     <div key={product._id} className="flex gap-2">
                         <p>{product.name}</p>
-                        <p>{product.quantity} {product.measurement}</p>
+                        <p>{product.quantity}x</p>
                     </div>
                 )}
-                <p className="w-max p-1 bg-green-200">{numberWithCommas(order.totalCost)} VND</p>
+                <p className="w-max p-1 bg-green-200">${numberWithCommas(order.totalCost)}</p>
             </div>
         </div>
     )
